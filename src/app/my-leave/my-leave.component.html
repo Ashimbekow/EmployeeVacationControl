@@ -1,0 +1,31 @@
+<div class="global_initial_container">
+  <h1>Мои</h1>
+</div>
+
+<div class="global_secondary_container">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Дата начало</th>
+      <th scope="col">Дата конц</th>
+      <th scope="col">
+        Всего дней в отпуске</th>
+      <th scope="col">Reason</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let leave of leaveList">
+      <td>{{leave.startDate}}</td>
+      <td>{{leave.endDate}}</td>
+      <td>{{leave.leaveDays}}</td>
+      <td>{{leave.reason}}</td>
+      <td>{{leave.status}}</td>
+      <td>
+        <button (click)="cancelLeave(leave.id, leave.status)" class="dark_shade_gray">Отмена</button>
+      </td>
+    </tr>
+
+  </table>
+</div>

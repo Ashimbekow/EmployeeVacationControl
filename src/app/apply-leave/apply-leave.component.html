@@ -1,0 +1,20 @@
+<div class="global_initial_container">
+  <h1>Подать заявку на отпуск</h1>
+</div>
+<div class="global_secondary_container">
+  <form [formGroup]="leaveFormGroup" (ngSubmit)="submitLeaveApplication(leaveFormGroup)" name="leaveFormGroup">
+<!--  <form >-->
+    <label>Дата начала:<br><input type="date" formControlName="start_date" [(ngModel)]="startDate" (ngModelChange)="calculateTotalDaysAndDisplay()"></label>
+    <br>
+    <label>Конец дД: <br><input type="date" formControlName="end_date" [(ngModel)]="endDate" (ngModelChange)="calculateTotalDaysAndDisplay()"></label>
+    <br>
+    <label>Количество дней: <span style="color: #2B7A77;font-weight: 700;">{{this.displayNumberOfDaysLeave}}</span></label>
+    <br>
+    <label>Причина: <br><textarea name="reason_input" formControlName="leave_reason" ngModel ></textarea></label>
+    <br>
+    <br>
+    <button class="general_submit_button">На рассмотрение</button>
+  </form>
+
+
+</div>
